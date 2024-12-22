@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
+import { Dot } from "lucide-react"
 
 function Appbar() {
 
@@ -21,9 +22,14 @@ function Appbar() {
 
     return (
         <div className='flex justify-between border-b border-black h-16'>
-            <div className="flex flex-col justify-center pl-4 text-xl  md:text-2xl font-semibold">
-                <Link to='/' className="cursor-pointer">
+            <div className="flex flex-col justify-center pl-4 text-xl  md:text-2xl font-bold">
+                <Link to='/'  onClick={() => {
+                            setAtAnalytics(false)
+                        }} className="cursor-pointer gap-0 flex mr-0">
                     shrtly
+                    <div className="flex flex-col justify-end m-0 gap-0 p-0">
+                    <Dot strokeWidth={"4px"} size={"20px"} className=" justify-start flex w-4 h-4 p-0 m-0"/>
+                    </div>
                 </Link>
             </div>
             <div className="mr-5 flex flex-col justify-center">
