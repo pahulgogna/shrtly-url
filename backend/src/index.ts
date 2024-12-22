@@ -12,7 +12,6 @@ var corsOptions = {
     optionsSuccessStatus: 200
 }
 
-
 app.use(cors(corsOptions))
 
 app.set('trust proxy', true);
