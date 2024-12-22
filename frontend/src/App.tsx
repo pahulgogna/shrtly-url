@@ -6,11 +6,13 @@ import Analytics from './pages/Analytics'
 import GraphPage from './pages/GraphPage'
 import Redirect from './pages/Redirect'
 import NewUrl from './pages/NewUrl'
+import GoogleAds from './components/GoogleAds'
 
 function App() {
 
     return (
       <div className='h-full'>
+        <GoogleAds/>
         <BrowserRouter>
           <Appbar/>
           <Routes>
