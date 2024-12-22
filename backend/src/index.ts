@@ -98,7 +98,6 @@ app.get('/analytics/*', async (req, res) => {
 
 })
 
-
 app.get('/*', async (req, res) => {
 
     const id = req.originalUrl.slice(1)
@@ -145,7 +144,6 @@ app.get('/*', async (req, res) => {
         res.sendStatus(500)
     }
 })
-
 
 app.listen(3000, () => {
     console.log("started server on port 3000")
