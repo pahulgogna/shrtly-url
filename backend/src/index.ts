@@ -23,6 +23,10 @@ app.use((req, _, next) => {
     next()
 })
 
+app.get("/", (req, res) => {
+    res.json({"detail": "pong"})
+})
+
 app.post('/shrink',async (req, res) => {
     let data = await readUrlJsonData()
 
