@@ -6,13 +6,13 @@ import Analytics from './pages/Analytics'
 import GraphPage from './pages/GraphPage'
 import Redirect from './pages/Redirect'
 import NewUrl from './pages/NewUrl'
-// import GoogleAds from './components/GoogleAds'
+import Footer from './components/Footer'
 
 function App() {
 
     return (
-      <div className='h-full'>
-        {/* <GoogleAds/> */}
+      <>
+      <div className='min-h-screen'>
         <BrowserRouter>
           <Appbar/>
           <Routes>
@@ -24,6 +24,8 @@ function App() {
           </Routes>
         </BrowserRouter>
       </div>
+      <Footer/>
+      </>
     )
 }
 
