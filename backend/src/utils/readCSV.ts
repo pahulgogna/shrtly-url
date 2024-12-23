@@ -11,7 +11,7 @@ async function parseCSVToJsonAndSave() {
   var urlData: {"url": string}[] = await csv()
     .fromFile('urlset/verified_online.csv')
 
-  const obj = Object.fromEntries(urlData.map(k => [k.url, true]))
+  const obj = Object.fromEntries(urlData.map(k => [k.url, "true"]))
 
   fs.writeFile("./urlset/jsonData.json",JSON.stringify(obj), () => {
     console.log("file written")
