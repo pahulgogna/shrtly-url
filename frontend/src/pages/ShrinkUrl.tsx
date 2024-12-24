@@ -4,6 +4,9 @@ import TextInput from "../components/TextInput"
 import axios from "axios";
 import { toast, ToastContainer } from "react-toastify";
 import { useNavigate } from "react-router-dom";
+import { StoreLink } from "../utils/Store";
+import { useSetRecoilState } from "recoil";
+import { UrlsAtom } from "../store/atom";
 
 var timeout: number;
 
@@ -12,6 +15,7 @@ function ShrinkUrl() {
     const [url, setUrl] = useState("")
     const [isValid, setIsValid] = useState(true)
     const navigate = useNavigate()
+    const setUrls = useSetRecoilState(UrlsAtom)
 
     function isUrlValid(userInput: string): boolean {
         if(!userInput.length){
@@ -42,8 +46,11 @@ function ShrinkUrl() {
                 }
             })
             if(data && data.data && data.data.detail){
+                let d = StoreLink(data.data.detail)
+                if(d){
+                    setUrls(d)
+                }
                 navigate("/new/" + data.data.detail)
-                
             }
             else{
                 toast.error("Invalid URL", {

@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "prepare:adsense": "node replace-env.js",
-    "build:adsense": "npm run prepare:adsense && npm run build", 
+    "build:adsense": "npm run prepare:adsense && npm run build",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -20,7 +20,8 @@
     "react-chartjs-2": "^5.2.0",
     "react-dom": "^18.3.1",
     "react-router-dom": "^7.1.0",
-    "react-toastify": "^11.0.2"
+    "react-toastify": "^11.0.2",
+    "recoil": "^0.7.7"
   },
   "devDependencies": {
     "@eslint/js": "^9.17.0",

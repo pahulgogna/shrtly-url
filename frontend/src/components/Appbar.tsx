@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { Dot } from "lucide-react"
+import { useRecoilValue } from "recoil"
+import { UrlsAtom } from "../store/atom"
 
 function Appbar() {
 
     const [atAnalytics, setAtAnalytics] = useState(false)
+    const Urls = useRecoilValue(UrlsAtom)
 
     useEffect(() => {
 
@@ -32,21 +35,32 @@ function Appbar() {
                     </div>
                 </Link>
             </div>
+            
             <div className="mr-5 flex flex-col justify-center">
-                    {
-                        atAnalytics ?
-                        <Link className="p-2 px-3 rounded-lg border border-slate-600" to={'/'} onClick={() => {
-                            setAtAnalytics(false)
-                        }}>
-                            Shrink
-                        </Link>
-                        :
-                        <Link className="p-2 px-3 rounded-lg border border-slate-600" to={'/analytics'} onClick={() => {
-                            setAtAnalytics(true)
-                        }}>
-                            Analytics
-                        </Link>
-                    }
+                <div className="flex gap-2">
+                        {
+                            Urls && Urls.length ? 
+                            <Link className="p-2 font-medium px-3 rounded-lg border border-slate-600" to={'/myurls'}>
+                                My Urls
+                            </Link>
+                            :
+                            null
+                        }
+                        {
+                            atAnalytics ?
+                            <Link className="p-2 px-3 font-medium rounded-lg border border-slate-600" to={'/'} onClick={() => {
+                                setAtAnalytics(false)
+                            }}>
+                                Shrink
+                            </Link>
+                            :
+                            <Link className="p-2 px-3 font-medium rounded-lg border border-slate-600" to={'/analytics'} onClick={() => {
+                                setAtAnalytics(true)
+                            }}>
+                                Analytics
+                            </Link>
+                        }
+                    </div>
             </div>
         </div>
     )
