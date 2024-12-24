@@ -4,6 +4,7 @@ import 'dotenv/config';
 const filePath = './index.html';
 const placeholder = '%REACT_APP_ADSENSE_CLIENT%';
 const replacement = process.env.VITE_GOOGLE_ADSENSE_ID;
+const AdsFileData = process.env.VITE_GOOGLE_ADS_FILE;
 
 async function replacePlaceholder() {
   try {
@@ -16,4 +17,16 @@ async function replacePlaceholder() {
   }
 }
 
+async function addAdsFile() {
+  
+  try{
+    await fs.writeFile("./Ads.txt", AdsFileData, 'utf8');
+  }
+  catch (error) {
+    console.error('Error during replacement:', error);
+  }
+  
+}
+
 replacePlaceholder();
+addAdsFile()
