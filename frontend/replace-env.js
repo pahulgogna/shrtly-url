@@ -20,7 +20,7 @@ async function replacePlaceholder() {
 async function addAdsFile() {
   
   try{
-    await fs.writeFile("./Ads.txt", AdsFileData, 'utf8');
+    await fs.writeFile("./public/Ads.txt", AdsFileData, 'utf8');
     console.log("Created Ads.txt")
   }
   catch (error) {
