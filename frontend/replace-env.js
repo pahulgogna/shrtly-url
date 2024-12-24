@@ -21,6 +21,7 @@ async function addAdsFile() {
   
   try{
     await fs.writeFile("./Ads.txt", AdsFileData, 'utf8');
+    console.log("Created Ads.txt")
   }
   catch (error) {
     console.error('Error during replacement:', error);
