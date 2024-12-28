@@ -41,16 +41,12 @@ function Url({
     return (
         <div className={"p-5 border border-slate-600 rounded-lg " + className}>
             <div className="col-span-1 font-semibold">
-                <div className="flex p-3 justify-center h-full">
+                <a className="flex p-3 justify-center h-full text-blue-600" target="_blank" href={import.meta.env.VITE_DOMAIN + "/" + id}>
                     {import.meta.env.VITE_DOMAIN + "/" + id}
-                </div>
+                </a>
             </div>
             <div className="col-span-1">
                 <div className="flex flex-col">
-                    <Link className=" flex text-slate-50  bg-slate-900 justify-center p-2 px-3 my-2 font-medium rounded-lg border border-slate-600" to={'/' + id} onClick={() => {
-                    }}>
-                                    Visit
-                    </Link>
                     <Link className=" flex text-slate-50 bg-slate-900 justify-center p-2 px-3 my-2 font-medium rounded-lg border border-slate-600" to={'/analytics/' + id} onClick={() => {
                     }}>
                                     Analytics
