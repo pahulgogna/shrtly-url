@@ -49,7 +49,7 @@ function Analytics() {
                     </div>
                     <div className="flex justify-center pb-5">
                         <div>
-                            <TextInput value={search} setValue={setSearch} lable="URL" placeholder="www.shrtly.co.in/966dop"/>
+                            <TextInput value={search} setValue={setSearch} lable="URL" placeholder="o.shrtly.co.in/966dop"/>
                             <Button onClick={handleClick}>
                                     check
                             </Button>
