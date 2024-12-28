@@ -61,7 +61,6 @@ function Analytics() {
                             </div>
                         </div>
                     </div>
-                    * Track the total hits of your shortened URL in real-time.
                 </div>
             </div>        
             <ToastContainer/>
