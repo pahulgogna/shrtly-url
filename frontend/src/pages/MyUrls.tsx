@@ -1,6 +1,7 @@
 import { useRecoilValue } from "recoil"
 import { UrlsAtom } from "../store/atom"
 import { Link, useNavigate } from "react-router-dom"
+import { ExternalLink } from "lucide-react"
 
 function MyUrls() {
 
@@ -43,6 +44,9 @@ function Url({
             <div className="col-span-1 font-semibold">
                 <a className="flex p-3 justify-center h-full text-blue-600" target="_blank" href={import.meta.env.VITE_DOMAIN + "/" + id}>
                     {import.meta.env.VITE_DOMAIN + "/" + id}
+                    <div className="text-black mx-1">
+                        <ExternalLink className="h-5"/>
+                    </div>
                 </a>
             </div>
             <div className="col-span-1">

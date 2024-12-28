@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { StoreLink } from "../utils/Store";
 import { useSetRecoilState } from "recoil";
 import { UrlsAtom } from "../store/atom";
+import Information from "../components/Information";
 
 var timeout: number;
 
@@ -74,7 +75,7 @@ function ShrinkUrl() {
 
     return (
         <div className="flex justify-center h-full">
-            <div className=" w-2/3 sm:w-1/2 lg:w-1/3">
+            <div className="w-full px-5 md:w-6/12 md:px-0">
                 <div>
                     <div className="font-semibold flex justify-center w-full text-2xl  md:text-3xl pt-5">
                         Shrink Your URL
@@ -94,6 +95,7 @@ function ShrinkUrl() {
                         </div>
                     </div>
                 </div>
+                <Information/>
             </div>
             <ToastContainer/>
         </div>
