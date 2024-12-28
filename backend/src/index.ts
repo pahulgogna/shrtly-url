@@ -24,7 +24,7 @@ app.use((req, _, next) => {
 })
 
 app.get("/", (req, res) => {
-    res.json({"detail": "pong"})
+    res.redirect("https://shrtly.co.in")
 })
 
 app.post('/shrink',async (req, res) => {
@@ -112,8 +112,6 @@ app.get('/*', async (req, res) => {
     }
 
     try{
-
-            
         let data = await Url.findOne({
             key: id
         })
@@ -137,15 +135,15 @@ app.get('/*', async (req, res) => {
                 {clicks: data.clicks + 1, graph: JSON.stringify(graph)}
             )
             
-            res.send(data.url)
+            res.redirect(data.url)
         }
         else{
-            res.sendStatus(404)
+            res.redirect("https://shrtly.co.in")
         }
     }
     catch(e){
         console.log(e)
-        res.sendStatus(500)
+        res.redirect("https://shrtly.co.in")
     }
 })
 
