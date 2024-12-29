@@ -1,5 +1,6 @@
 import { Dot } from "lucide-react";
 import { GitHub, LinkedIn } from "./basics/Icons";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -15,6 +16,24 @@ const Footer = () => {
                     by pahulgogna
                 </div>
             </div>
+        </div>
+
+        <div className="flex gap-4 justify-center">
+            <a href={'/'} className="text-blue-600 font-light text-sm" >
+              Home
+            </a>
+
+            <a href={'/analytics'} className="text-blue-600 font-light text-sm" >
+              Analytics
+            </a>
+
+            <Link to={'/myurl'} className="text-blue-600 font-light text-sm" >
+              History
+            </Link>
+
+            <Link to={'/terms'} className="text-blue-600 font-light text-sm" >
+              Terms of service
+            </Link>
         </div>
 
         <div className="flex space-x-4">

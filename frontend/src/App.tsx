@@ -9,27 +9,29 @@ import NewUrl from './pages/NewUrl'
 import Footer from './components/Footer'
 import { RecoilRoot } from 'recoil'
 import MyUrls from './pages/MyUrls'
+import TermsOfServices from './pages/TermsOfServices'
 
 function App() {
 
     return (
       <>
-      <div className='min-h-screen'>
+      <RecoilRoot>
         <BrowserRouter>
-        <RecoilRoot>
-          <Appbar/>
-          <Routes>
-            <Route element={<ShrinkUrl/>} path='/'/>
-            <Route element={<NewUrl/>} path='/new/*'/>
-            <Route element={<Analytics/>} path='/analytics'/>
-            <Route element={<GraphPage/>} path='/analytics/*'/>
-            <Route element={<MyUrls/>} path='/myurls'/>
-            <Route element={<Redirect/>} path='/*'/>
-          </Routes>
-        </RecoilRoot>
+          <div className='min-h-screen'>
+              <Appbar/>
+              <Routes>
+                <Route element={<ShrinkUrl/>} path='/'/>
+                <Route element={<NewUrl/>} path='/new/*'/>
+                <Route element={<Analytics/>} path='/analytics'/>
+                <Route element={<GraphPage/>} path='/analytics/*'/>
+                <Route element={<MyUrls/>} path='/myurls'/>
+                <Route element={<TermsOfServices/>} path='/terms'/>
+                <Route element={<Redirect/>} path='/*'/>
+              </Routes>
+          </div>
+        <Footer/>
         </BrowserRouter>
-      </div>
-      <Footer/>
+      </RecoilRoot>
       </>
     )
 }

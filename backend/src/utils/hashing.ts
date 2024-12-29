@@ -1,4 +1,3 @@
-// Import a non-cryptographic hashing library like xxhash
 import { h64 } from "xxhashjs";
 
 export function shortHash(inputString: string, length: number = 6): string {
@@ -10,10 +9,8 @@ export function shortHash(inputString: string, length: number = 6): string {
    * @returns A short hash of the input string.
    */
 
-  // Step 1: Generate a 64-bit hash using xxHash
   const hashValue = h64(inputString, 0x0).toString(10); // Get the numeric string representation
 
-  // Step 2: Convert the hash to Base62
   const characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let base62Hash = "";
   let numericValue = BigInt(hashValue); // Use BigInt for large values
