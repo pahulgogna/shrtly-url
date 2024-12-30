@@ -10,6 +10,7 @@ import Footer from './components/Footer'
 import { RecoilRoot } from 'recoil'
 import MyUrls from './pages/MyUrls'
 import TermsOfServices from './pages/TermsOfServices'
+import ReportMalicious from './pages/ReportMalicious'
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
                 <Route element={<GraphPage/>} path='/analytics/*'/>
                 <Route element={<MyUrls/>} path='/myurls'/>
                 <Route element={<TermsOfServices/>} path='/terms'/>
+                <Route element={<ReportMalicious/>} path='/report'/>
                 <Route element={<Redirect/>} path='/*'/>
               </Routes>
           </div>

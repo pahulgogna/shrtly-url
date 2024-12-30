@@ -9,7 +9,7 @@ import { useSetRecoilState } from "recoil";
 import { UrlsAtom } from "../store/atom";
 import Information from "../components/Information";
 
-var timeout: number;
+var timeout: number
 
 function ShrinkUrl() {
 

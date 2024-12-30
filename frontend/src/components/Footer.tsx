@@ -27,6 +27,10 @@ const Footer = () => {
               Analytics
             </a>
 
+            <Link to={'/report'} className="text-blue-600 font-light text-sm" >
+              Report
+            </Link>
+
             <Link to={'/myurl'} className="text-blue-600 font-light text-sm" >
               History
             </Link>
@@ -34,6 +38,7 @@ const Footer = () => {
             <Link to={'/terms'} className="text-blue-600 font-light text-sm" >
               Terms of service
             </Link>
+
         </div>
 
         <div className="flex space-x-4">

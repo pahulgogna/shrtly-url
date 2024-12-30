@@ -84,6 +84,14 @@ function GraphPage() {
                         </div>
                     </a>
                 </div>
+                <div className='flex justify-center gap-2'>
+                    Leads to: 
+                    <div className=' text-blue-600 hover:text-blue-700 font-normal'>
+                        <a target='_blank' href={fullData.url}>
+                            {fullData.url}
+                        </a>
+                    </div>
+                </div>
             </div>
             <ToastContainer/>
         </div>

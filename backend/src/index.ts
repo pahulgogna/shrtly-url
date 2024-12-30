@@ -102,6 +102,37 @@ app.get('/analytics/*', async (req, res) => {
 
 })
 
+app.get("/rm/*", async (req, res) => {
+
+    let data = req.originalUrl.split("/")
+
+    let id = data[data.length - 1]    
+
+    if(!id){
+        res.sendStatus(404)
+        return
+    }
+
+    let updated = await Url.findOneAndUpdate(
+            {
+                key: id
+            },
+            {
+                verified: false
+            }
+    )
+
+    console.log(id, updated)
+
+    if(updated){
+        res.sendStatus(204)
+    }
+    else{
+        res.sendStatus(404)
+        return
+    }
+})
+
 app.get('/*', async (req, res) => {
 
     const id = req.originalUrl.slice(1)
@@ -117,6 +148,11 @@ app.get('/*', async (req, res) => {
         })
 
         if(data){
+
+            if(!data.verified){
+                res.redirect("https://shrtly.co.in")
+                return
+            }
             
             const d = (new Date()).toDateString()
             
