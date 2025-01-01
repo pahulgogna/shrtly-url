@@ -31,7 +31,7 @@ const Footer = () => {
               Report
             </Link>
 
-            <Link to={'/myurl'} className="text-blue-600 font-light text-sm" >
+            <Link to={'/myurls'} className="text-blue-600 font-light text-sm" >
               History
             </Link>
 
