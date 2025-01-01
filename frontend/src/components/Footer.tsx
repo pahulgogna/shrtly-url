@@ -18,7 +18,7 @@ const Footer = () => {
             </div>
         </div>
 
-        <div className="flex gap-4 justify-center">
+        <div className="grid grid-cols-3 md:grid-cols-5 gap-2 px-2 justify-center">
             <a href={'/'} className="text-blue-600 font-light text-sm" >
               Home
             </a>
