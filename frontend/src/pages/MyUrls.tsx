@@ -1,17 +1,11 @@
 import { useRecoilValue } from "recoil"
 import { UrlsAtom } from "../store/atom"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { ExternalLink } from "lucide-react"
 
 function MyUrls() {
 
     const urls = useRecoilValue(UrlsAtom)
-    const navigate = useNavigate()
-
-    if(!urls || !localStorage.getItem("urls")){
-        navigate("/")
-        return
-    }
 
     return (
         <>
@@ -19,13 +13,20 @@ function MyUrls() {
                 Your URLs
             </div>
             <div className="flex justify-center">
+                {urls ?
                 <div className="container grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 p-5">
-                    {
-                        urls.map((id) => {
+                    
+                        {urls.map((id) => {
                             return <Url id={id} className="container"/>
-                        })
-                    }
+                        })}
+                        
                 </div>
+                :<div className="flex justify-center py-10 text-xl font-semibold  w-full">
+                    <div>
+                        URLs you shorten will appear here.
+                    </div>
+                </div>
+                }
             </div>
         </>
     )

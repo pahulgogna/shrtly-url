@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import { useEffect, useState } from "react"
 import { Dot } from "lucide-react"
 import { useRecoilValue } from "recoil"
@@ -8,6 +8,8 @@ function Appbar() {
 
     const [atAnalytics, setAtAnalytics] = useState(false)
     const Urls = useRecoilValue(UrlsAtom)
+    const location = useLocation();
+
 
     useEffect(() => {
 
@@ -20,7 +22,27 @@ function Appbar() {
             setAtAnalytics(false)
         }
 
-    }, [window.location])
+        const infoDiv = document.getElementById("info-div");
+
+        const termsDiv = document.getElementById("terms-div");
+
+        if (infoDiv) {
+        infoDiv.style.display = location.pathname === "/terms" ? "none" : "flex";
+        }
+
+        if(termsDiv){
+        termsDiv.style.display = location.pathname === "/terms" ? "block" : "none";
+        }
+        
+        return () => {
+            if(infoDiv)
+            infoDiv.style.display = "flex";
+
+            if(termsDiv)
+            termsDiv.style.display = "none";
+        }
+
+        }, [location])
     
 
     return (

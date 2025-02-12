@@ -6,7 +6,6 @@ import Analytics from './pages/Analytics'
 import GraphPage from './pages/GraphPage'
 import Redirect from './pages/Redirect'
 import NewUrl from './pages/NewUrl'
-import Footer from './components/Footer'
 import { RecoilRoot } from 'recoil'
 import MyUrls from './pages/MyUrls'
 import TermsOfServices from './pages/TermsOfServices'
@@ -18,7 +17,6 @@ function App() {
       <>
       <RecoilRoot>
         <BrowserRouter>
-          <div className='min-h-screen'>
               <Appbar/>
               <Routes>
                 <Route element={<ShrinkUrl/>} path='/'/>
@@ -30,8 +28,6 @@ function App() {
                 <Route element={<ReportMalicious/>} path='/report'/>
                 <Route element={<Redirect/>} path='/*'/>
               </Routes>
-          </div>
-        <Footer/>
         </BrowserRouter>
       </RecoilRoot>
       </>
