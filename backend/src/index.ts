@@ -8,7 +8,7 @@ import cors from 'cors';
 const app = express();
 
 var corsOptions = {
-    origin: 'https://shrtly.co.in',
+    origin: ['https://shrtly.co.in', "https://www.shrtly.co.in"],
     optionsSuccessStatus: 200
 }
 
